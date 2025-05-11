@@ -5,7 +5,7 @@ require_once("../middlewares/auth.php");
 class ClasesController{
     public static function clases(){
           $con= conectar();
-          verificarSesion();
+          verificarToken();
 
 $input = json_decode(file_get_contents("php://input"), true);
 
