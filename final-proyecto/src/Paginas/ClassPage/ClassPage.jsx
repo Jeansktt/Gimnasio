@@ -4,7 +4,9 @@ import { Navigate } from 'react-router-dom';
 
 const ClassPage = () => {
   const { token } = useAuth();
-  if (!token) return <Navigate to='/login' />; // Redirige si no hay token
+
+  // Si no hay token, redirige a la página de login
+  if (!token) return <Navigate to='/login' />;
 
   return (
     <main className='clase'>
@@ -15,3 +17,4 @@ const ClassPage = () => {
 };
 
 export default ClassPage;
+

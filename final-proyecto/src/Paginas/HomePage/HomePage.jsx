@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import './HomePage.css';
 
+
+
 const HomePage = () => {
     const { token, logout, user } = useAuth();
 
@@ -23,8 +25,13 @@ const HomePage = () => {
                             onClick={logout}
                         >
                             <p>Cerrar sesión</p>
+                            
                         </div>
                         
+                     <NavLink to="/clasesnuevas" className="clases clickable-button">
+                            <p>Clases Nuevas</p>
+                        </NavLink>
+
                     </>
                 )}
             </nav>
