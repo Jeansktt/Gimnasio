@@ -1,52 +1,59 @@
-<?php
+<?php 
+session_start();
 require_once("../db/conexion.php");
-require_once("../vendor/autoload.php");
+header("Content-Type: application/json");
 
-use Firebase\JWT\JWT;
-use Firebase\JWT\Key;
+class ObtenerClases {
+    public static function verClases() {
+        $con = conectar();
 
-// === Función para verificar el token JWT ===
-function verificarToken() {
-    $headers = getallheaders();
-    $authHeader = $headers['Authorization'] ?? '';
+        try {
+            $classes = self::selectAllGymClasses($con); // Llamar a método estático correctamente
 
-    if (!$authHeader || !str_starts_with($authHeader, 'Bearer ')) {
-        http_response_code(401);
-        echo json_encode(['status' => 'error', 'mensaje' => 'Token no proporcionado']);
-        exit();
+            echo json_encode([
+                'status' => 'Success',
+                'data' => [
+                    'classes' => $classes
+                ]
+            ]);
+        } catch (Exception $e) {
+            http_response_code(500);
+            echo json_encode([
+                'status' => 'Error',
+                'message' => 'Hubo un problema al obtener las clases: ' . $e->getMessage()
+            ]);
+        }
     }
 
-    $token = str_replace('Bearer ', '', $authHeader);
+     private static function selectAllGymClasses($mysqli) {
+        //"SELECT * FROM clases ORDER BY fecha ASC"
+        $stmt = $mysqli->prepare("SELECT 
+                                      c.id_clases,
+                                      c.nombre_clase AS nombre_clase,
+                                      c.fecha,
+                                      c.descripcion,
+                                      m.nombre AS nombre
+                                  FROM 
+                                      clases c
+                                  JOIN 
+                                      monitores m ON c.id_monitor = m.id_monitor
+                                  ORDER BY 
+                                      c.fecha ASC");
 
-    try {
-        $clave_secreta = 'gym'; // La misma clave que usaste en login
-        $decoded = JWT::decode($token, new Key($clave_secreta, 'HS256'));
-        return $decoded;
-    } catch (Exception $e) {
-        http_response_code(401);
-        echo json_encode(['status' => 'error', 'mensaje' => 'Token inválido: ' . $e->getMessage()]);
-        exit();
+        if (!$stmt) {
+            throw new Exception("Error en la consulta: " . $mysqli->error);
+        }
+
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        $clases = [];
+        while ($row = $result->fetch_assoc()) {
+            $clases[] = $row;
+        }
+
+        return $clases;
     }
 }
 
-// === Verificar el token ===
-verificarToken();
-
-// === Conectar a la base de datos ===
-$con = conectar();
-
-// === Obtener todas las clases ===
-$query = $con->prepare("SELECT * FROM clases");
-$query->execute();
-$resultado = $query->get_result();
-
-$clases = [];
-while ($fila = $resultado->fetch_assoc()) {
-    $clases[] = $fila;
-}
-
-echo json_encode([
-    'status' => 'ok',
-    'clases' => $clases
-]);
 ?>

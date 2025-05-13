@@ -60,7 +60,7 @@ function crear_tabla_usuarios_clases($con){
 
 
 // Solo para probar desde Postman o navegador
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+/*if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $con = conectar();
     if ($con) {
 		//mensaje que devuelve postman tanto si funciona como si no funcion
@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         echo "Error en la conexión.";
     }
 }
-
+*/
 
 
 ?>
