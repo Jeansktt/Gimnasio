@@ -15,6 +15,7 @@ function conectar(){
 	crear_tabla_clases($con);
 	crear_tabla_valoraciones($con);
 	crear_tabla_usuarios_clases($con);
+
 	
 	return $con;
 
@@ -26,7 +27,7 @@ function crear_bdd($con){
 
 //tabla de usuarios
 function crear_tabla_usuarios($con){
-	mysqli_query($con, "CREATE TABLE IF NOT EXISTS usuarios(id_usuario int primary key auto_increment, nombre varchar(100),email varchar(100), username varchar(100), pass varchar(100));");
+	mysqli_query($con, "CREATE TABLE IF NOT EXISTS usuarios(id_usuario int primary key auto_increment, nombre varchar(100),apellidos varchar(100),email varchar(100), username varchar(100), pass varchar(100));");
 	
 }
 //tabla monitor
@@ -57,6 +58,9 @@ function crear_tabla_usuarios_clases($con){
 		FOREIGN KEY(id_clases) REFERENCES clases(id_clases)
 	);");
 }
+
+
+
 
 
 // Solo para probar desde Postman o navegador
