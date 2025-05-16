@@ -5,6 +5,8 @@ import RegisterPage from './Paginas/RegisterPage/RegisterPage';
 import HomePage from './Paginas/HomePage/HomePage';
 import ClassPage from './Paginas/ClassPage/ClassPage';
 import ViewClassPage from './Paginas/ViewClassPage/ViewClassPage';
+import RegisterMonitorPage from './Paginas/RegisterMonitorPage/RegisterMonitorPage';
+import ViewUserPage from './Paginas/getUserPage/getUserPage';
 function App() {
   return (
     <div className="app">
@@ -15,6 +17,9 @@ function App() {
         <Route path='/home'element={<HomePage/>}/>
         <Route path='/clasesnuevas'element={<ClassPage/>}/>
         <Route path='/verclases' element={<ViewClassPage/>}/>
+        <Route path='/register-monitor' element={<RegisterMonitorPage/>}/>
+        <Route path='/veruser' element={<ViewUserPage/>}/>
+
       </Routes>
     </div>
     
