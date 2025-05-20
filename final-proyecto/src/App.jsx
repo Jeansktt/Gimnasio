@@ -7,6 +7,7 @@ import ClassPage from './Paginas/ClassPage/ClassPage';
 import ViewClassPage from './Paginas/ViewClassPage/ViewClassPage';
 import RegisterMonitorPage from './Paginas/RegisterMonitorPage/RegisterMonitorPage';
 import ViewUserPage from './Paginas/getUserPage/getUserPage';
+import ViewValoracionPage from './Paginas/ViewValoracionPage/ViewValoracionPage';
 function App() {
   return (
     <div className="app">
@@ -19,6 +20,7 @@ function App() {
         <Route path='/verclases' element={<ViewClassPage/>}/>
         <Route path='/register-monitor' element={<RegisterMonitorPage/>}/>
         <Route path='/veruser' element={<ViewUserPage/>}/>
+        <Route path='/ver-valoracion' element={<ViewValoracionPage/>}/>
 
       </Routes>
     </div>
