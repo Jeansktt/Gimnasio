@@ -9,7 +9,7 @@ class ValoracionController {
         $con = conectar();  // Usamos la función conectar() para obtener la conexión
 
         // Verificar token y obtener datos del usuario
-        verificarToken();  // Llamada a la función que verifica el token
+        //verificarToken();  // Llamada a la función que verifica el token
         
         // Obtener los datos del cuerpo de la solicitud
         $data = json_decode(file_get_contents("php://input"), true);

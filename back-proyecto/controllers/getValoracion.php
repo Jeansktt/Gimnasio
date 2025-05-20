@@ -1,52 +1,46 @@
-<?php
+<?php 
+session_start();
 require_once("../db/conexion.php");
-require_once("../vendor/autoload.php");
+header("Content-Type: application/json");
 
-use Firebase\JWT\JWT;
-use Firebase\JWT\Key;
+class ObtenerValoraciones {
+    public static function verValoraciones() {
+        $con = conectar();
 
-// === Función para verificar el token JWT ===
-function verificarToken() {
-    $headers = getallheaders();
-    $authHeader = $headers['Authorization'] ?? '';
+        try {
+            $valoraciones = self::selectAllValoraciones($con);
 
-    if (!$authHeader || !str_starts_with($authHeader, 'Bearer ')) {
-        http_response_code(401);
-        echo json_encode(['status' => 'error', 'mensaje' => 'Token no proporcionado']);
-        exit();
+            echo json_encode([
+                'status' => 'Success',
+                'data' => [
+                    'valoraciones' => $valoraciones
+                ]
+            ]);
+        } catch (Exception $e) {
+            http_response_code(500);
+            echo json_encode([
+                'status' => 'Error',
+                'message' => 'Hubo un problema al obtener las valoraciones: ' . $e->getMessage()
+            ]);
+        }
     }
 
-    $token = str_replace('Bearer ', '', $authHeader);
+    private static function selectAllValoraciones($mysqli) {
+        $stmt = $mysqli->prepare("SELECT * FROM valoraciones");
 
-    try {
-        $clave_secreta = 'gym'; // La misma clave que usaste en login
-        $decoded = JWT::decode($token, new Key($clave_secreta, 'HS256'));
-        return $decoded;
-    } catch (Exception $e) {
-        http_response_code(401);
-        echo json_encode(['status' => 'error', 'mensaje' => 'Token inválido: ' . $e->getMessage()]);
-        exit();
+        if (!$stmt) {
+            throw new Exception("Error en la consulta: " . $mysqli->error);
+        }
+
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        $valoraciones = [];
+        while ($row = $result->fetch_assoc()) {
+            $valoraciones[] = $row;
+        }
+
+        return $valoraciones;
     }
 }
-
-// === Verificar el token ===
-verificarToken();
-
-// === Conectar a la base de datos ===
-$con = conectar();
-
-// === Obtener todas las clases ===
-$query = $con->prepare("SELECT * FROM valoraciones");
-$query->execute();
-$resultado = $query->get_result();
-
-$clases = [];
-while ($fila = $resultado->fetch_assoc()) {
-    $clases[] = $fila;
-}
-
-echo json_encode([
-    'status' => 'ok',
-    'clases' => $clases
-]);
 ?>
