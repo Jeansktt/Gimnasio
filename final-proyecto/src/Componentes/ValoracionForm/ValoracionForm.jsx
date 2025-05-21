@@ -24,7 +24,7 @@ const ValoracionForm = () => {
       setLoading(true);
       await valoracionService(id_usuario, id_monitor,puntuacion, fecha_valoracion, comentario);
 
-      navigate('/login');
+      navigate('/home');
     } catch (err) {
       setErrMsg(err.message);
     } finally {

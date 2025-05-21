@@ -18,7 +18,7 @@ const RegisterForm = () => {
       setLoading(true);
       await registerServiceMonitor(name, email,username, password);
 
-      navigate('/login');
+      navigate('/home-monitor');
     } catch (err) {
       setErrMsg(err.message);
     } finally {

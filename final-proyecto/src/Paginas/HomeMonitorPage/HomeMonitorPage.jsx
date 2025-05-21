@@ -1,33 +1,39 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
-import './HomePage.css';
 
 
 
-const HomePage = () => {
+
+const HomeMonitorPage = () => {
     const { token, logout, user } = useAuth();
 
     return (
         <div className='home-page'>
             <h1>Bienvenido a Gym-Jean</h1>
             <p>
-                ¡Deja de estar gordito!
+                ¡Eres monitor!
             </p>
             <nav className='buttons'>
                 {user && <p>Bienvenidx @{user.username }</p>}
                 
                 {token && (
                     <>
-                       
+                        
+                     <NavLink to="/clasesnuevas" className="clases clickable-button">
+                            <p>Clases Nuevas</p>
+                        </NavLink>
                     <NavLink to="/verclases" className="verclases clickable-button">
                             <p>Clases disponibles</p>
                         </NavLink>
                     <NavLink to="/ver-valoracion" className="clases clickable-button">
                             <p>Ver valoraciones</p>
                         </NavLink>
-                    <NavLink to="/valoracion" className="clases clickable-button">
-                            <p>Poner una valoración</p>
+                    <NavLink to="/register-monitor" className="clases clickable-button">
+                            <p>Registrar nuevo monitor</p>
+                        </NavLink>
+                    <NavLink to="/updateuser" className="clases clickable-button">
+                            <p>Actualizar usuarios</p>
                         </NavLink>
                     <div
                             className='button-close clickable-button'
@@ -35,7 +41,8 @@ const HomePage = () => {
                         >
                             <p>Cerrar sesión</p>
                             
-                        </div>    
+                        </div>
+                    
                     </>
                 )}
             </nav>
@@ -43,4 +50,4 @@ const HomePage = () => {
     );
 };
 
-export default HomePage;
+export default HomeMonitorPage;

@@ -7,7 +7,7 @@ const Valoracionpage = () => {
     const { token } = useAuth();
 
   // Si no hay token, redirige a la página de login
-  if (!token) return <Navigate to='/login' />;
+  if (!token) return <Navigate to='/' />;
 
   return (
     <main className='valoracion'>

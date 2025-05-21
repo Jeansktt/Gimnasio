@@ -4,13 +4,17 @@ import useAuth from '../../hooks/useAuth';
 import { Navigate } from 'react-router-dom';
 
 const LoginPage = () => {
-  const { token, login } = useAuth();
+  const { token, user,login } = useAuth();
 //si hay token que te lleve a otra pagina que quiera
-  if (token) return <Navigate to='/home' />;
+  if (token && user) {
+    if (user.rol === 'usuario') return <Navigate to="/home" />;
+    if (user.rol === 'monitor') return <Navigate to="/home-monitor" />;
+    return <Navigate to="/home" />; // Fallback por si acaso
+  }
 
   return (
     <main className='Login'>
-      <h2>Iniciar Sesión</h2>
+      <h2>Bienvenido</h2>
       <LoginForm login={login} />
     </main>
   );

@@ -1,5 +1,6 @@
 // components/LoginForm/LoginForm.jsx
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './LoginForm.css';
 
 const LoginForm = ({ login }) => {
@@ -37,7 +38,7 @@ const LoginForm = ({ login }) => {
       />
       <button type="submit" className='button-login'>Iniciar Sesión</button>
       {error && <p style={{ color: 'red' }}>{error}</p>}
-
+      <Link to="/register">Registrarse</Link>
     </form>
     </div>
     </div>

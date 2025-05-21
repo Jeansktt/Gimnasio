@@ -34,6 +34,7 @@ const useAuth = () => {
     localStorage.removeItem('user');
     setToken(null);
     setUser(null);
+    window.location.href = '/';
   };
 
   return { token,user, login, logout };

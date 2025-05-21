@@ -1,17 +1,16 @@
-import RegisterForm from '../../Componentes/RegisterForm/RegisterForm';
-
+import UpdateUser from '../../Componentes/UpdateUser/UpdateUser';
 import { Navigate } from 'react-router-dom';
 
-const ClassPage = () => {
+const UpdateUserPage = () => {
   //const { token } = useAuth();
   //if (!token) return <Navigate to='/login' />; // Redirige si no hay token
 
   return (
     <main className='clase'>
-      <h2>¡Registrate!</h2>
-      <RegisterForm />
+      <h2>Actualizar Usuarios!</h2>
+      <UpdateUser />
     </main>
   );
 };
 
-export default ClassPage;
+export default UpdateUserPage;
