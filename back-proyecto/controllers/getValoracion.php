@@ -26,7 +26,11 @@ class ObtenerValoraciones {
     }
 
     private static function selectAllValoraciones($mysqli) {
-        $stmt = $mysqli->prepare("SELECT * FROM valoraciones");
+        $stmt = $mysqli->prepare("
+        SELECT v.*, u.username 
+        FROM valoraciones v
+        JOIN usuarios u ON v.id_usuario = u.id_usuario
+    ");
 
         if (!$stmt) {
             throw new Exception("Error en la consulta: " . $mysqli->error);
