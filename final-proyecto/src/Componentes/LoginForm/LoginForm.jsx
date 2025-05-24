@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './LoginForm.css';
+import imgLogin from '../../imagenes/img-login.jpg';
 
 const LoginForm = ({ login }) => {
   const [user, setUser] = useState('');
@@ -20,6 +21,7 @@ const LoginForm = ({ login }) => {
   return (
     <div className='container-login'>
     <div className='div-login'>
+      <img src={imgLogin} width="300px"/>
       <h2>Login</h2>
     <form onSubmit={handleSubmit} className='form-login'>
       <input

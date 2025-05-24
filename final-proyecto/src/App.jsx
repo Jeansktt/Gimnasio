@@ -11,6 +11,8 @@ import ViewValoracionPage from './Paginas/ViewValoracionPage/ViewValoracionPage'
 import Valoracionpage from './Paginas/ValoracionPage/valoracionpage';
 import HomeMonitorPage from './Paginas/HomeMonitorPage/HomeMonitorPage';
 import UpdateUserPage from './Paginas/UpdateUserPage/UpdateUserPage';
+import Footer from './Componentes/Footer/Footer';
+import PerfilPage from './Paginas/Perfil/Perfil';
 function App() {
   return (
     <div className="app">
@@ -27,7 +29,9 @@ function App() {
         <Route path='/ver-valoracion' element={<ViewValoracionPage/>}/>
         <Route path='/valoracion' element={<Valoracionpage/>}/>
         <Route path='/updateuser' element={<UpdateUserPage/>}/>
+        <Route path='/perfil' element={<PerfilPage/>}/>
       </Routes>
+      <Footer/>
     </div>
     
     

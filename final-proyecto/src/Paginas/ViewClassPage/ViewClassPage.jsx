@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ViewClass from '../../Componentes/ViewClass/ViewClass';
+import './ViewClassPage.css';
+
 
 const ViewClassPage = () => {
   const [clases, setClases] = useState([]);
@@ -25,15 +27,20 @@ const ViewClassPage = () => {
   if (loading) return <p>Cargando clases...</p>;
 
   return (
-    <div>
-      <h2>Clases disponibles</h2>
+    
+    <div >
+      <h2  className='titulo-clases'>Clases</h2>
+      <div  className='contenedor-clases'>
       {clases.length === 0 ? (
         <p>No hay clases disponibles.</p>
       ) : (
         clases.map((clase) => (
           <ViewClass key={clase.id_clase} gymClass={clase} />
+          
         ))
       )}
+      
+    </div>
     </div>
   );
 };

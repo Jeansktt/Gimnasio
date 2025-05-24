@@ -1,41 +1,42 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import './HomePage.css';
+import imgejer1 from "../../imagenes/ej1.png";
 
 
 
 const HomePage = () => {
     const { token, logout, user } = useAuth();
+    
 
     return (
         <div className='home-page'>
-            <h1>Bienvenido a Gym-Jean</h1>
-            <p>
-                ¡Deja de estar gordito!
-            </p>
+            <div className='items-usuario'>
+            <div className='items-menu-usuario'>
+                <Link to="/">Inicio</Link>
+                <Link to="/verclases">Clases</Link>
+                <Link to="/">Entrenadores</Link>
+                <Link to="/">Ejercicios</Link>  
+                <Link to="/perfil">Perfil</Link>          
+            </div>
+            </div>
+            <div className='carrusel'>
+            <img src={imgejer1} width="100%"/>
+            </div>
+           
+            
             <nav className='buttons'>
-                {user && <p>Bienvenidx @{user.username }</p>}
+               
                 
                 {token && (
                     <>
                        
-                    <NavLink to="/verclases" className="verclases clickable-button">
-                            <p>Clases disponibles</p>
-                        </NavLink>
-                    <NavLink to="/ver-valoracion" className="clases clickable-button">
-                            <p>Ver valoraciones</p>
-                        </NavLink>
-                    <NavLink to="/valoracion" className="clases clickable-button">
-                            <p>Poner una valoración</p>
-                        </NavLink>
-                    <div
-                            className='button-close clickable-button'
-                            onClick={logout}
-                        >
-                            <p>Cerrar sesión</p>
-                            
-                        </div>    
+                    
+                    
+                   
+                       
                     </>
                 )}
             </nav>

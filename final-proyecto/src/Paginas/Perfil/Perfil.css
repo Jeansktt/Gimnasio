@@ -1,0 +1,25 @@
+.titulo-perfil{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button-close>p{
+margin-top: 15px;
+color: red;
+font-size: 30px;
+}
+.perfil-page{
+    height: 550px;
+    font-size: 18px;
+}
+.buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    font-size: 30px;
+}
+.label{
+    color: #009CCB;
+}

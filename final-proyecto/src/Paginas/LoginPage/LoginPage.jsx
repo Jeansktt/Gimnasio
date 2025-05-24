@@ -14,7 +14,7 @@ const LoginPage = () => {
 
   return (
     <main className='Login'>
-      <h2>Bienvenido</h2>
+      
       <LoginForm login={login} />
     </main>
   );

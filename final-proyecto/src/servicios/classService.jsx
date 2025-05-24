@@ -1,5 +1,6 @@
-const createClassService = async (nombre_clase, descripcion, id_monitor, fecha) => {
+const createClassService = async (id_clases,nombre_clase, descripcion, id_monitor, fecha) => {
   console.log({
+    id_clases,
   nombre_clase,
   descripcion,
   id_monitor,
@@ -12,6 +13,7 @@ const createClassService = async (nombre_clase, descripcion, id_monitor, fecha) 
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
+        id_clases: id_clases,
         nombre_clase: nombre_clase,
         descripcion: descripcion,
         id_monitor: id_monitor,

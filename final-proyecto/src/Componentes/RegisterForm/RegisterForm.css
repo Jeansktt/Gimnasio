@@ -1,3 +1,53 @@
-*{
-    color:black;
+.container-register{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  background-image: url('../../imagenes/img-login.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 950px;
+}
+.div-register{
+    background-color: #009CCB;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    width: 500px;
+    height: 800px;
+    
+    
+}
+
+.form-register{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+    outline: none;
+    
+}
+
+.input-register{
+    background:transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #333;
+    font-size: 22px;
+}
+input::placeholder {
+    color: white; 
+  }
+
+  .button-register{
+    background-color: black;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    color: white;
+    border: none;
 }

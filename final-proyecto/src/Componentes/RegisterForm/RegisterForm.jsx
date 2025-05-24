@@ -3,6 +3,7 @@ import registerService from '../../servicios/registerService';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { useNavigate } from 'react-router-dom';
 import './RegisterForm.css';
+import imgRegister from '../../imagenes/img-register.jpg';
 const RegisterForm = () => {
   const navigate = useNavigate();
   const[name, setName]=useState('');
@@ -18,7 +19,7 @@ const RegisterForm = () => {
       setLoading(true);
       await registerService(name, email,username, password);
 
-      navigate('/login');
+      navigate('/');
     } catch (err) {
       setErrMsg(err.message);
     } finally {
@@ -26,8 +27,11 @@ const RegisterForm = () => {
     }
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Registro</h2>
+    <div className='container-register'>
+    <div className='div-register'>
+      <img src={imgRegister} width="300px"/>
+    <form onSubmit={handleSubmit} className='form-register'>
+      <h2>¡Registrate!</h2>
       <label htmlFor='nombre'>Nombre:</label>
       <input
         type='text'
@@ -36,6 +40,8 @@ const RegisterForm = () => {
         onChange={(e) => setName(e.target.value)}
         autoFocus
         required
+        className='input-register'
+        placeholder='Nombre'
       />
       <label htmlFor='email'>Email:</label>
       <input
@@ -45,6 +51,8 @@ const RegisterForm = () => {
         onChange={(e) => setEmail(e.target.value)}
         autoFocus
         required
+        className='input-register'
+        placeholder='Email'
       />
       <label htmlFor='username'>Usuario:</label>
       <input
@@ -54,6 +62,8 @@ const RegisterForm = () => {
         onChange={(e) => setUsername(e.target.value)}
         autoFocus
         required
+        className='input-register'
+        placeholder='Usuario'
       />
       <label htmlFor='password'>Contraseña:</label>
       <input
@@ -63,11 +73,15 @@ const RegisterForm = () => {
         onChange={(e) => setPassword(e.target.value)}
         autoFocus
         required
+        className='input-register'
+        placeholder='Contraseña'
       />
-      <button>Registrarse</button>
+      <button className='button-register'>Registrarse</button>
 
       {errMsg && <ErrorMessage msg={errMsg} />}
     </form>
+    </div>
+    </div>
   );
 };
 export default RegisterForm;
