@@ -1,7 +1,4 @@
-*{
-    color:black
-}
-.container-clasesform{
+.container-register-monitor{
     display: flex;
   justify-content: center;
   align-items: center;
@@ -11,7 +8,7 @@
     background-position: center;
     height: 650px;
 }
-.div-clasesform{
+.div-register-monitor{
     background-color: #009CCB;
     display: flex;
     flex-direction: column;
@@ -23,7 +20,7 @@
     
     
 }
-.form-clases{
+.formulario-monitor-register{
 
     display: flex;
     flex-direction: column;
@@ -34,7 +31,7 @@
     
 }
 
-.campos-clases{
+.campos-register{
     background:transparent;
     outline: none;
     border: none;
@@ -42,7 +39,7 @@
     font-size: 22px;
 }
 
-.boton-clases{
+.button-registro-monitor{
     background-color: black;
     padding: 5px;
     border-radius: 5px;
@@ -51,6 +48,6 @@
     border: none;
 }
 
-.titulo-clases{
+.titulo-registro-monitor{
     color: white;
 }

@@ -7,7 +7,7 @@ const UpdateUserPage = () => {
 
   return (
     <main className='clase'>
-      <h2>Actualizar Usuarios!</h2>
+      
       <UpdateUser />
     </main>
   );

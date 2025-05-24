@@ -2,7 +2,7 @@ import { useState } from 'react';
 import registerServiceMonitor from '../../servicios/registerServiceMonitor';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { useNavigate } from 'react-router-dom';
-//import './RegisterForm.css';
+import './RegisterFormMonitor.css';
 const RegisterForm = () => {
   const navigate = useNavigate();
   const[name, setName]=useState('');
@@ -26,8 +26,12 @@ const RegisterForm = () => {
     }
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Registro Monitor</h2>
+    <div className='container-register-monitor'>
+      <div className='div-register-monitor'>
+
+      
+    <form className="formulario-monitor-register" onSubmit={handleSubmit}>
+      <h2 className='titulo-registro-monitor'>Registra Nuevo Monitor</h2>
       <label htmlFor='nombre'>Nombre:</label>
       <input
         type='text'
@@ -36,6 +40,7 @@ const RegisterForm = () => {
         onChange={(e) => setName(e.target.value)}
         autoFocus
         required
+        className='campos-register'
       />
       <label htmlFor='email'>Email:</label>
       <input
@@ -45,6 +50,7 @@ const RegisterForm = () => {
         onChange={(e) => setEmail(e.target.value)}
         autoFocus
         required
+        className='campos-register'
       />
       <label htmlFor='username'>Usuario:</label>
       <input
@@ -54,6 +60,7 @@ const RegisterForm = () => {
         onChange={(e) => setUsername(e.target.value)}
         autoFocus
         required
+        className='campos-register'
       />
       <label htmlFor='password'>Contraseña:</label>
       <input
@@ -63,11 +70,14 @@ const RegisterForm = () => {
         onChange={(e) => setPassword(e.target.value)}
         autoFocus
         required
+        className='campos-register'
       />
-      <button>Registrarse</button>
+      <button className='button-registro-monitor'>Registrarse</button>
 
       {errMsg && <ErrorMessage msg={errMsg} />}
     </form>
+    </div>
+    </div>
   );
 };
 export default RegisterForm;

@@ -1,4 +1,6 @@
 import ClassForm from '../../Componentes/ClassForm/ClassForm';
+import MenuMonitor from '../../Componentes/MenuMonitor/MenuMonitor';
+
 import useAuth from '../../hooks/useAuth';
 import { Navigate } from 'react-router-dom';
 
@@ -10,7 +12,7 @@ const ClassPage = () => {
 
   return (
     <main className='clase'>
-      <h2>Crear nueva clase</h2>
+      <MenuMonitor></MenuMonitor>
       <ClassForm />
     </main>
   );

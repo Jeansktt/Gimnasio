@@ -1,7 +1,4 @@
-*{
-    color:black
-}
-.container-clasesform{
+.container-update{
     display: flex;
   justify-content: center;
   align-items: center;
@@ -11,7 +8,7 @@
     background-position: center;
     height: 650px;
 }
-.div-clasesform{
+.div-update{
     background-color: #009CCB;
     display: flex;
     flex-direction: column;
@@ -19,11 +16,11 @@
     align-items: center;
     row-gap: 10px;
     width: 500px;
-    height: 500px;
+    height: 600px;
     
     
 }
-.form-clases{
+.formulario-update{
 
     display: flex;
     flex-direction: column;
@@ -34,7 +31,7 @@
     
 }
 
-.campos-clases{
+.campo-update{
     background:transparent;
     outline: none;
     border: none;
@@ -42,7 +39,7 @@
     font-size: 22px;
 }
 
-.boton-clases{
+.boton-update{
     background-color: black;
     padding: 5px;
     border-radius: 5px;
@@ -50,7 +47,6 @@
     color: white;
     border: none;
 }
-
-.titulo-clases{
+.titulo-update{
     color: white;
 }

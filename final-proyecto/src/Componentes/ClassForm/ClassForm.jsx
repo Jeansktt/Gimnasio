@@ -36,8 +36,10 @@ const ClassForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Crear Clase</h2>
+    <div className='container-clasesform'>
+      <div className='div-clasesform'>
+    <form className="form-clases" onSubmit={handleSubmit}>
+      <h2 className='titulo-clases'>Crear Clase</h2>
 
       <label>Nombre de la clase:</label>
       <input
@@ -45,6 +47,7 @@ const ClassForm = () => {
         value={nombreClase}
         onChange={(e) => setNombreClase(e.target.value)}
         required
+        className='campos-clases'
       />
 
       <label>Descripción:</label>
@@ -53,6 +56,7 @@ const ClassForm = () => {
         value={descripcion}
         onChange={(e) => setDescripcion(e.target.value)}
         required
+        className='campos-clases'
       />
 
       <label>ID del monitor:</label>
@@ -61,6 +65,7 @@ const ClassForm = () => {
         value={idMonitor}
         onChange={(e) => setIdMonitor(e.target.value)}
         required
+        className='campos-clases'
       />
 
       <label>Fecha:</label>
@@ -69,14 +74,17 @@ const ClassForm = () => {
         value={fecha}
         onChange={(e) => setFecha(e.target.value)}
         required
+        className='campos-clases'
       />
 
-      <button type="submit" disabled={loading}>
+      <button type="submit" disabled={loading} className='boton-clases'>
         {loading ? 'Guardando...' : 'Guardar Clase'}
       </button>
 
       {errMsg && <ErrorMessage msg={errMsg} />}
     </form>
+    </div>
+    </div>
   );
 };
 

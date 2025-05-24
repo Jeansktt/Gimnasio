@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
+import './HomeMonitorPage.css';
 
 
 
@@ -10,41 +11,52 @@ const HomeMonitorPage = () => {
 
     return (
         <div className='home-page'>
-            <h1>Bienvenido a Gym-Jean</h1>
-            <p>
-                ¡Eres monitor!
-            </p>
-            <nav className='buttons'>
-                {user && <p>Bienvenidx @{user.username }</p>}
-                
-                {token && (
-                    <>
-                        
-                     <NavLink to="/clasesnuevas" className="clases clickable-button">
-                            <p>Clases Nuevas</p>
+            
+            <h1 className='titulo-home-monitor'>Gestiona el Gimnasio</h1>
+            
+            <div className='contenedor-gestion'>
+            <div className='gestion' id='gestion1'>
+            <NavLink to="/clasesnuevas" className="clases clickable-button">
+                            <p>Crear Clases</p>
                         </NavLink>
-                    <NavLink to="/verclases" className="verclases clickable-button">
-                            <p>Clases disponibles</p>
-                        </NavLink>
-                    <NavLink to="/ver-valoracion" className="clases clickable-button">
+            </div>
+            <div className='gestion' id='gestion2'>
+            <NavLink to="/ver-valoracion" className="clases clickable-button">
                             <p>Ver valoraciones</p>
                         </NavLink>
-                    <NavLink to="/register-monitor" className="clases clickable-button">
+            </div>
+            <div className='gestion' id='gestion3'>
+            <NavLink to="/register-monitor" className="clases clickable-button">
                             <p>Registrar nuevo monitor</p>
                         </NavLink>
-                    <NavLink to="/updateuser" className="clases clickable-button">
+            </div>
+            <div className='gestion' id='gestion4'>
+            <NavLink to="/updateuser" className="clases clickable-button">
                             <p>Actualizar usuarios</p>
                         </NavLink>
-                    <div
-                            className='button-close clickable-button'
-                            onClick={logout}
-                        >
-                            <p>Cerrar sesión</p>
-                            
-                        </div>
-                    
-                    </>
-                )}
+            </div>
+            <div className='gestion' id='gestion5'>
+            <NavLink to="/updateuser" className="clases clickable-button">
+                            <p>Borrar Usuarios</p>
+                        </NavLink>
+            </div>
+            <div className='gestion' id='gestion6'>
+            <NavLink to="/veruser" className="clases clickable-button">
+                            <p>Ver Usuarios</p>
+                        </NavLink>
+            </div>
+            </div>
+
+            <nav className='buttons'>
+                <>
+                <div
+                className='button-close clickable-button'
+                onClick={logout}
+                >
+                <p>Cerrar sesión</p>
+                </div>
+                </>
+                
             </nav>
         </div>
     );

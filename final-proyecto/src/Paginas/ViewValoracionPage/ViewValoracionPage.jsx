@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ViewValoracion from '../../Componentes/ViewValoracion/ViewValoracion';
+import './ViewValoracionPage.css';
+import MenuMonitor from '../../Componentes/MenuMonitor/MenuMonitor';
 
 const ViewValoracionPage = () => {
   const [valoraciones, setValoraciones] = useState([]);
@@ -25,8 +27,11 @@ const ViewValoracionPage = () => {
   if (loading) return <p>Cargando valoraciones...</p>;
 
   return (
-    <div>
-      <h2>Valoraciones disponibles</h2>
+    <div className=''>
+      <MenuMonitor></MenuMonitor>
+      <h2 className='titulo-valoracion'>Valoraciones</h2>
+      <div className='contenedor-valoraciones'>
+      
       {valoraciones.length === 0 ? (
         <p>No hay valoraciones disponibles.</p>
       ) : (
@@ -34,6 +39,7 @@ const ViewValoracionPage = () => {
           <ViewValoracion key={valoracion.id_valoracion} valoracion={valoracion} />
         ))
       )}
+      </div>
     </div>
   );
 };

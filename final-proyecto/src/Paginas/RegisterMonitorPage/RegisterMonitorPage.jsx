@@ -1,3 +1,4 @@
+import MenuMonitor from '../../Componentes/MenuMonitor/MenuMonitor';
 import RegisterFormMonitor from '../../Componentes/RegisterFormMonitor/RegisterFormMonitor';
 import useAuth from '../../hooks/useAuth';
 import { Navigate } from 'react-router-dom';
@@ -8,7 +9,7 @@ const ClassPage = () => {
 
   return (
     <main className='clase'>
-      <h2>Crear nueva clase</h2>
+      <MenuMonitor></MenuMonitor>
       <RegisterFormMonitor/>
     </main>
   );

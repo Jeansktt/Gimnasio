@@ -1,0 +1,17 @@
+.items-menu-usuario{
+    display: flex;
+  gap: 1.5rem;
+  align-items: center;
+    background-color: black;
+  padding: 1.5rem;
+  color: white;
+  justify-content: center;
+    align-items: center;
+}
+
+.items-menu-usuario a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    
+}
