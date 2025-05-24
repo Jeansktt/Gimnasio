@@ -1,0 +1,13 @@
+.titulo-monitor{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.monitor{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 80px;
+  height: 550px;
+  align-items: center;
+  
+}

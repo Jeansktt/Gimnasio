@@ -1,10 +1,9 @@
-const valoracionService = async (id_usuario, id_monitor,puntuacion, fecha_valoracion, comentario) => {
+const valoracionService = async (id_usuario, id_monitor,puntuacion, comentario) => {
   
   console.log({
   id_usuario,
   id_monitor,
   puntuacion,
-  fecha_valoracion,
   comentario
 });
   try {
@@ -20,7 +19,6 @@ const valoracionService = async (id_usuario, id_monitor,puntuacion, fecha_valora
         id_usuario: id_usuario,
         id_monitor: id_monitor,
         puntuacion: puntuacion,
-        fecha_valoracion: fecha_valoracion,
         comentario: comentario
       }),
     });

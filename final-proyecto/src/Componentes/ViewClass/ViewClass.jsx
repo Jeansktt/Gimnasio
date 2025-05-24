@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 
 const ViewClass = ({ gymClass }) => {
   return (
+  
+      
     <div className='classes-container'>
     
     <div className="class-card" key={gymClass.id_clases}>
@@ -13,9 +15,10 @@ const ViewClass = ({ gymClass }) => {
       <p>Fecha: {new Date(gymClass.fecha).toLocaleString()}</p>
       <p>Descripcion: {gymClass.descripcion} </p>
       <p>Monitor de la clase: {gymClass.nombre}</p>
-      <Link to="/">Reservar</Link>
+      <Link to="/reservas" className='boton-reservar'>Reservar</Link>
     </div>
     </div>
+    
   );
 };
 

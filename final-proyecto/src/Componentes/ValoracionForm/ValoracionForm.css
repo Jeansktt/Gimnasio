@@ -1,0 +1,68 @@
+.container-valoracion{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  background-image: url('../../imagenes/img-valoracion.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 650px;
+}
+.div-valoracion{
+    background-color: #009CCB;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    width: 500px;
+    height: 600px;
+    
+    
+}
+.form-valoracion{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+    outline: none;
+    
+}
+
+.button-enviar{
+    background-color: black;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    color: white;
+    border: none;
+}
+
+.id_monitor{
+    background:transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #333;
+    font-size: 22px;
+
+}
+
+.id_usuario{
+    background:transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #333;
+    font-size: 22px;
+
+}
+
+.comentario{
+    background:transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #333;
+    font-size: 22px;
+
+}

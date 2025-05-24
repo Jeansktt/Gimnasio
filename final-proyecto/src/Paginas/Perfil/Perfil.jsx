@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import './Perfil.css';
+import MenuUsuario from '../../Componentes/MenuUsuario/MenuUsuario';
 
 
 
@@ -12,13 +13,10 @@ const PerfilPage = () => {
 
     return (
         <div className='perfil-page'>
-            <div className='items-menu-usuario'>
-                            <Link to="/">Inicio</Link>
-                            <Link to="/verclases">Clases</Link>
-                            <Link to="/">Entrenadores</Link>
-                            <Link to="/">Ejercicios</Link>  
-                            <Link to="/perfil">Perfil</Link>          
-                        </div>
+            
+            <div className='menu'>
+            <MenuUsuario></MenuUsuario>
+           </div>
             <h1 className='titulo-perfil'>Perfil</h1>
             <div className='foto-perfil'>
                 <p>FOTO</p>
@@ -27,6 +25,8 @@ const PerfilPage = () => {
                 
                 {token && (
                     <>
+                    <label className='label'>ID</label>  
+                    {user && <p className='info'>{user.id_usuario }</p>}
                     <label className='label'>Nombre</label>  
                     {user && <p className='info'>{user.nombre }</p>}
                      <label className='label'>Email</label>  

@@ -1,0 +1,23 @@
+.contenedor-monitor{
+align-items: center;
+
+}
+.monitor-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: #009CCB;
+  display: flex;
+  flex-direction: column;
+  width: 250px; /* Asegura que los <p> estén uno debajo de otro */
+  height: 150px;
+  justify-content: center;
+  align-items: center;
+}
+.info-monitor{
+  color: white;
+}
+
+.monitor-card:hover{
+  background-color: #135287;
+}

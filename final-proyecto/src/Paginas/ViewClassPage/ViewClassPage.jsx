@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import ViewClass from '../../Componentes/ViewClass/ViewClass';
 import './ViewClassPage.css';
-
+import { Link } from 'react-router-dom';
+import MenuUsuario from '../../Componentes/MenuUsuario/MenuUsuario';
 
 const ViewClassPage = () => {
   const [clases, setClases] = useState([]);
@@ -29,6 +30,11 @@ const ViewClassPage = () => {
   return (
     
     <div >
+      <div className='items-usuario'>
+        <div className='menu'>
+            <MenuUsuario></MenuUsuario>
+           </div>
+      </div>      
       <h2  className='titulo-clases'>Clases</h2>
       <div  className='contenedor-clases'>
       {clases.length === 0 ? (

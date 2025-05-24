@@ -1,19 +1,29 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import valoracionService from '../../servicios/valoracionService';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { useNavigate } from 'react-router-dom';
+import './ValoracionForm.css';
+import useAuth from '../../hooks/useAuth';
+
 const ValoracionForm = () => {
   const navigate = useNavigate();
   const[id_usuario, setid_usuario]=useState('');
   const [id_monitor, setid_monitor] = useState('');
   const [puntuacion, setpuntuacion] = useState('');
-  const [fecha_valoracion, setfecha] = useState('');
+ // const [fecha_valoracion, setfecha] = useState('');
   const [comentario, setcomentario] = useState('');
   const [errMsg, setErrMsg] = useState(false);
   const [loading, setLoading] = useState(false);
+  const {user } = useAuth();
+
+  useEffect(() => {
+    if (user?.id_usuario) {
+      setid_usuario(user.id_usuario);
+    }
+  }, [user]);
 
   const handleSubmit = async (e) => {
-    if (!id_usuario || !id_monitor || !puntuacion || !fecha_valoracion|| !comentario) {
+    if (!id_usuario || !id_monitor || !puntuacion || !comentario) {
       setErrMsg("Todos los campos son obligatorios.");
       setLoading(false);
       return;
@@ -22,7 +32,7 @@ const ValoracionForm = () => {
     try {
       e.preventDefault();
       setLoading(true);
-      await valoracionService(id_usuario, id_monitor,puntuacion, fecha_valoracion, comentario);
+      await valoracionService(id_usuario, id_monitor,puntuacion, comentario);
 
       navigate('/home');
     } catch (err) {
@@ -32,22 +42,25 @@ const ValoracionForm = () => {
     }
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <div className='container-valoracion'>
+      <div className='div-valoracion'>
+    <form className="form-valoracion" onSubmit={handleSubmit}>
       <h2>Valoracion</h2>
       <label htmlFor='id_usuario'>Tu ID:</label>
       <input
-        type='text'
-        id='id_usuario'
-        //value={name}
-        onChange={(e) => setid_usuario(e.target.value)}
-        autoFocus
-        required
-      />
+          className='campo-reservas'
+            type="text"
+            readOnly
+            value={user.id_usuario}
+            onChange={(e) => setid_usuario(e.target.value)}
+            required
+            
+          />
       <label htmlFor='id_monitor'>ID del monitor:</label>
       <input
         type='text'
-        id='id_monitor'
-        //value={email}
+        className='id_monitor'
+        value={id_monitor}
         onChange={(e) => setid_monitor(e.target.value)}
         autoFocus
         required
@@ -63,27 +76,22 @@ const ValoracionForm = () => {
         <option value="5">5</option>
       </select>
      
-      <label htmlFor="fecha">Fecha:</label>
-    <input
-        type="date"
-        id="fecha"
-        onChange={(e) => setfecha(e.target.value)}
-        autoFocus
-        required
-    />
+      
     <label htmlFor='comentario'>Comentario:</label>
       <input
         type='text'
-        id='comentario'
-        //value={email}
+        className='comentario'
+        value={comentario}
         onChange={(e) => setcomentario(e.target.value)}
         autoFocus
         required
       />
-      <button>Enviar</button>
+      <button className='button-enviar'>Enviar</button>
 
       {errMsg && <ErrorMessage msg={errMsg} />}
     </form>
+    </div>
+    </div>
   );
 };
 export default ValoracionForm;

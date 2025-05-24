@@ -1,0 +1,28 @@
+.ejercicios-container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.tarjeta-ejercicio{
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: #009CCB;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+}
+.tarjeta-ejercicio:hover{
+    background-color: #135287;
+    transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.titulo-ejercicio{
+font-weight: bold;
+color: white;
+}
+

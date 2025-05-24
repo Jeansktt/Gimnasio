@@ -1,3 +1,4 @@
+import MenuUsuario from '../../Componentes/MenuUsuario/MenuUsuario';
 import ValoracionForm from '../../Componentes/ValoracionForm/valoracionForm';
 import useAuth from '../../hooks/useAuth';
 import { Navigate } from 'react-router-dom';
@@ -11,7 +12,8 @@ const Valoracionpage = () => {
 
   return (
     <main className='valoracion'>
-      <h2>Poner una valoracion</h2>
+      
+      <MenuUsuario></MenuUsuario>
       <ValoracionForm />
     </main>
   );

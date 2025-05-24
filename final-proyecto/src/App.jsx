@@ -13,6 +13,9 @@ import HomeMonitorPage from './Paginas/HomeMonitorPage/HomeMonitorPage';
 import UpdateUserPage from './Paginas/UpdateUserPage/UpdateUserPage';
 import Footer from './Componentes/Footer/Footer';
 import PerfilPage from './Paginas/Perfil/Perfil';
+import ViewMonitorPage from './Paginas/getMonitorPage/getMonitorPage';
+import ReservasPage from './Paginas/ReservasPage/ReservasPage';
+import EjerciciosPage from './Paginas/EjerciciosPage/EjerciciosPage';
 function App() {
   return (
     <div className="app">
@@ -30,6 +33,9 @@ function App() {
         <Route path='/valoracion' element={<Valoracionpage/>}/>
         <Route path='/updateuser' element={<UpdateUserPage/>}/>
         <Route path='/perfil' element={<PerfilPage/>}/>
+        <Route path='/monitores' element={<ViewMonitorPage/>}/>
+        <Route path='/reservas' element={<ReservasPage/>}/>
+        <Route path='/ejercicios' element={<EjerciciosPage/>}/>
       </Routes>
       <Footer/>
     </div>

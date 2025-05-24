@@ -1,0 +1,59 @@
+.container-reservas p{
+    color: green;
+    
+}
+.form-container{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+    outline: none;
+    gap:25px;
+}
+.reserva{
+    background-color:#009CCB;
+    height: 450px;
+    width: 450px;
+    margin:50px;
+    padding:50px;
+    
+}
+.reserva h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+.container-reservas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 580px;
+    background-image: url('../../imagenes/img-ejer4.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.campo-reservas{
+    background:transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #333;
+    font-size: 22px;
+}
+
+input::placeholder {
+    color: black; 
+  }
+.button-reservar{
+    background-color: black;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    color: white;
+    border: none;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+}

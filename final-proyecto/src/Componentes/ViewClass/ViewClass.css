@@ -13,3 +13,18 @@
   flex-direction: column;
   width: 250px; /* Asegura que los <p> estén uno debajo de otro */
 }
+.boton-reservar{
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:#009CCB;
+  padding: 5px;
+  border-radius: 50px;
+  text-decoration: none;
+  color: white;
+}
+
+.boton-reservar:hover{
+  background-color: #135287;
+}
