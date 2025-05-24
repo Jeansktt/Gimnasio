@@ -1,26 +1,23 @@
-<?php 
+<?php
 session_start();
 require_once("../db/conexion.php");
 
-
-class RegisterMonitorController{
-    public static function registermonitor(){
+class RerservasController{
+    public static function reservar(){
         $con= conectar();
         //$con= conectar();
 
         $input = json_decode(file_get_contents("php://input"), true);
-        
-        $nombre=$input['nombre']?? '';
-        $email=$input['email'] ?? '';
-        $username= $input['username'] ?? '';
-        $pass= $input['pass'] ?? '';
-        
-        
-        if(empty($nombre) || empty($email) || empty($username)|| empty($pass)){
+
+        $id_usuario=$input['id_usuario']?? '';
+        $id_clases=$input['id_clases'] ?? '';
+
+
+        if(empty($id_usuario) || empty($id_clases)){
             echo "Rellene todos los campos";
         }else{
-            $query= $con->prepare("insert into monitores(nombre,email,username, pass)values (?,?,?,?)");
-            $query->bind_param("ssss", $nombre, $email, $username, $pass);
+            $query= $con->prepare("INSERT INTO usuarios_clases (id_usuario, id_clases) VALUES (?, ?)");
+            $query->bind_param("ii", $id_usuario, $id_clases);
         
             if ($query->execute()) {
                echo json_encode(["succes"=> true, "message"=> "Se ha registrado correctamente"]);
@@ -28,10 +25,7 @@ class RegisterMonitorController{
                 echo json_encode(["succes"=> false, "message"=> "No se ha registrado correctamente". $query->error]);
             }
         }
-
     }
 }
 
-
-?>
 

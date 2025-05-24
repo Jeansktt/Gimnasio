@@ -18,11 +18,11 @@ class ValoracionController {
         $id_usuario = $data['id_usuario'] ?? ''; 
         $id_monitor = $data['id_monitor'] ?? '';  // El 'id_monitor' debe venir en el cuerpo de la solicitud
         $puntuacion = $data['puntuacion'] ?? '';
-        $fecha = $data['fecha_valoracion'] ?? '';  // La fecha de la valoración
+        //$fecha = $data['fecha_valoracion'] ?? '';  // La fecha de la valoración
         $comentario = $data['comentario'] ?? '';  // El comentario dejado por el usuario
 
         // Validar que todos los campos estén presentes
-        if (empty($id_usuario) || empty($id_monitor) || empty($puntuacion) || empty($fecha) || empty($comentario)) {
+        if (empty($id_usuario) || empty($id_monitor) || empty($puntuacion) || empty($comentario)) {
             echo json_encode(['status' => 'error', 'mensaje' => 'Campos vacíos']);
             exit;
         }
@@ -34,8 +34,8 @@ class ValoracionController {
         }
 
         // Preparar la consulta para insertar la valoración
-        $stmt = $con->prepare("INSERT INTO valoraciones (id_usuario, id_monitor, puntuacion, fecha_valoracion, comentario) 
-                              VALUES (?, ?, ?, ?, ?)");
+        $stmt = $con->prepare("INSERT INTO valoraciones (id_usuario, id_monitor, puntuacion, comentario) 
+                              VALUES (?, ?, ?, ?)");
 
         // Verificar si la preparación fue exitosa
         if ($stmt === false) {
@@ -44,7 +44,7 @@ class ValoracionController {
         }
 
         // Usar bind_param para asignar los parámetros a la consulta
-        $stmt->bind_param("iiiss", $id_usuario, $id_monitor, $puntuacion, $fecha, $comentario);
+        $stmt->bind_param("iiis", $id_usuario, $id_monitor, $puntuacion, $comentario);
 
         // Ejecutar la consulta
         if ($stmt->execute()) {
