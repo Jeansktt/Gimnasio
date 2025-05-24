@@ -36,7 +36,7 @@ const HomeMonitorPage = () => {
                         </NavLink>
             </div>
             <div className='gestion' id='gestion5'>
-            <NavLink to="/updateuser" className="clases clickable-button">
+            <NavLink to="/delete-user" className="clases clickable-button">
                             <p>Borrar Usuarios</p>
                         </NavLink>
             </div>

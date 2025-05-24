@@ -16,6 +16,7 @@ import PerfilPage from './Paginas/Perfil/Perfil';
 import ViewMonitorPage from './Paginas/getMonitorPage/getMonitorPage';
 import ReservasPage from './Paginas/ReservasPage/ReservasPage';
 import EjerciciosPage from './Paginas/EjerciciosPage/EjerciciosPage';
+import DeleteUser from './Componentes/DeleteUser/DeleteUser';
 function App() {
   return (
     <div className="app">
@@ -36,6 +37,7 @@ function App() {
         <Route path='/monitores' element={<ViewMonitorPage/>}/>
         <Route path='/reservas' element={<ReservasPage/>}/>
         <Route path='/ejercicios' element={<EjerciciosPage/>}/>
+        <Route path='/delete-user' element={<DeleteUser/>}/>
       </Routes>
       <Footer/>
     </div>
