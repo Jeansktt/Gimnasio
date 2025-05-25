@@ -36,8 +36,8 @@ const HomeMonitorPage = () => {
                         </NavLink>
             </div>
             <div className='gestion' id='gestion5'>
-            <NavLink to="/delete-user" className="clases clickable-button">
-                            <p>Borrar Usuarios</p>
+            <NavLink to="/ver-reservas" className="clases clickable-button">
+                            <p>Ver Reservas</p>
                         </NavLink>
             </div>
             <div className='gestion' id='gestion6'>
@@ -53,7 +53,7 @@ const HomeMonitorPage = () => {
                 className='button-close clickable-button'
                 onClick={logout}
                 >
-                <p>Cerrar sesión</p>
+                <p className='boton-cerrar'>Cerrar sesión</p>
                 </div>
                 </>
                 

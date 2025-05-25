@@ -1,17 +1,11 @@
 import React from 'react';
-import './ViewReservas.css';
-const ViewReservas = ({ reservas }) => {
+//import './ViewReserva.css';
+
+const ViewReservas = ({ reserva }) => {
   return (
-    <div className="valoracion-container">
-      <h2></h2>
-    <div className='valoracion-card'>
-      
-      
-      <p><strong>Reseña de:</strong> {reservas.username}</p>
-      <p><strong>Al monitor con id:</strong> {reservas.id_monitor}</p>
-      <p><strong>Puntuación:</strong> {reservas.puntuacion}</p>
-      
-    </div>
+    <div className="tarjeta-clase">
+      <h3>{reserva.nombre_clase}</h3>
+      <p><strong>Usuario:</strong> {reserva.username}</p>
     </div>
   );
 };

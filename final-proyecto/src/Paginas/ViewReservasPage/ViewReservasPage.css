@@ -1,0 +1,29 @@
+.titulo-reservas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor-reservas{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  
+}
+.tarjeta-reservas{
+    background-color:#009CCB ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 250px;
+    border: 1px solid #ccc;
+    color: white;
+}
+
+ul{
+    list-style: none;
+}
+.texto-reservas{
+    color: white;
+}

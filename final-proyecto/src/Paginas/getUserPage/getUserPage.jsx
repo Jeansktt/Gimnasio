@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import UserPage from '../../Componentes/UserPage/UserPage';
+import './getUserPage.css';
+import MenuMonitor from '../../Componentes/MenuMonitor/MenuMonitor';
 
 const ViewUserPage = () => {
   const [usuarios, setUsuarios] = useState([]);
@@ -27,7 +29,9 @@ const ViewUserPage = () => {
 
   return (
     <div>
-      <h2>Usuarios registrados</h2>
+      <MenuMonitor></MenuMonitor>
+      <h2 className='titulo-users'>Usuarios registrados</h2>
+    <div className='container-usuarios'>
       {usuarios.length === 0 ? (
         <p>No hay usuarios registrados.</p>
       ) : (
@@ -35,6 +39,7 @@ const ViewUserPage = () => {
           <UserPage key={usuario.id_usuario} user={usuario} />
         ))
       )}
+    </div>  
     </div>
   );
 };

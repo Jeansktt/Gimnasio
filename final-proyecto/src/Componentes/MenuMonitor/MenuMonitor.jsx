@@ -9,7 +9,8 @@ const MenuMonitor = () => {
             <Link to="/clasesnuevas">Crear clases</Link>
             <Link to="/ver-valoracion">Ver Valoración</Link>
             <Link to="/register-monitor">Registrar Monitor</Link>
-                      
+            <Link to="/ver-reservas">Ver Reservas</Link> 
+            <Link to="/veruser">Ver Usuarios</Link>     
             </div>
         </div>
     );

@@ -1,0 +1,15 @@
+.user-card{
+background-color:#009CCB ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 250px;
+    border: 1px solid #ccc;
+    color: white;
+
+}
+
+.user-card:hover{
+    background-color:rgb(3, 100, 184) ;
+}

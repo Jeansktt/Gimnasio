@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './UserPage.css';
 const UserPage = ({ user }) => {
     console.log("Usuario recibido:", user);
   return (
