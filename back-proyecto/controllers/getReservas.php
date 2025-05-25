@@ -26,7 +26,12 @@ class ObtenerReservas {
     }
 
     public static function selectAllReservas($mysqli) {
-        $stmt = $mysqli->prepare("SELECT * FROM usuarios_clases");
+        $stmt = $mysqli->prepare("SELECT r.*, c.nombre_clase, u.username
+            FROM usuarios_clases r
+            JOIN clases c ON r.id_clases = c.id_clases
+            JOIN usuarios u ON r.id_usuario = u.id_usuario");
+
+        
 
         if (!$stmt) {
             throw new Exception("Error en la consulta: " . $mysqli->error);
