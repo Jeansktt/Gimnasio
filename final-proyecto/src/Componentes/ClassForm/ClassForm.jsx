@@ -27,7 +27,7 @@ const ClassForm = () => {
     try {
       // Llamada al servicio
       await createClass(nombreClase, descripcion, idMonitor, fecha);
-      navigate('/home');
+      navigate('/home-monitor');
     } catch (error) {
       setErrMsg(error.message || 'Error al crear la clase');
     } finally {

@@ -45,18 +45,19 @@ const UpdateUser = () => {
   return (
     <div className='container-update'>
       <div className='div-update'> 
+        
         <h2 className='titulo-update'>Actualizar Usuarios</h2>
     <form className="formulario-update" onSubmit={handleSubmit}>
         <label htmlFor="id_usuario">ID usuario</label>
       <input name="id_usuario"  onChange={handleChange} required className='campo-update'/>
       <label htmlFor="nombre">Nombre</label>
-      <input name="nombre"  onChange={handleChange} className='campo-update'/>
+      <input name="nombre"  onChange={handleChange}required  className='campo-update'/>
       <label htmlFor="email">Email</label>
-      <input name="email"  onChange={handleChange} className='campo-update' />
+      <input name="email"  onChange={handleChange} required className='campo-update' />
       <label htmlFor="usuario">Usuario</label>
-      <input name="username" onChange={handleChange} className='campo-update'/>
+      <input name="username" onChange={handleChange} required className='campo-update'/>
       <label htmlFor="pass">Nueva contraseña</label>
-      <input name="pass" type="password"  onChange={handleChange} className='campo-update'/>
+      <input name="pass" type="password"  onChange={handleChange} required className='campo-update'/>
       <button type="submit" className='boton-update'>Actualizar</button>
     </form>
     </div>
