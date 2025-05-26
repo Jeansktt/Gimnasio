@@ -17,6 +17,8 @@ import ViewMonitorPage from './Paginas/getMonitorPage/getMonitorPage';
 import ReservasPage from './Paginas/ReservasPage/ReservasPage';
 import EjerciciosPage from './Paginas/EjerciciosPage/EjerciciosPage';
 import ViewReservasPage from './Paginas/ViewReservasPage/ViewReservasPage';
+import ViewEjercicioPage from './Paginas/ViewEjerciciosPage/ViewEjercicioPage';
+import ViewEjercicioUserPage from './Paginas/ViewEjercicioPageUser/ViewEjercicioPageUser';
 function App() {
   return (
     <div className="app">
@@ -38,6 +40,9 @@ function App() {
         <Route path='/reservas' element={<ReservasPage/>}/>
         <Route path='/ejercicios' element={<EjerciciosPage/>}/>
         <Route path='/ver-reservas' element={<ViewReservasPage/>}/>
+        <Route path='/ejercicios'element={<EjerciciosPage/>}/>
+        <Route path='/ver-ejercicios'element={<ViewEjercicioPage/>}/>
+        <Route path='/ver-ejercicios-user'element={<ViewEjercicioUserPage/>}/>
 
       </Routes>
       <Footer/>

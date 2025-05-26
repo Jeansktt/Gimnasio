@@ -45,6 +45,16 @@ const HomeMonitorPage = () => {
                             <p>Ver Usuarios</p>
                         </NavLink>
             </div>
+            <div className='gestion' id='gestion7'>
+            <NavLink to="/ejercicios" className="clases clickable-button">
+                            <p>Crear Ejercicio</p>
+                        </NavLink>
+            </div>
+            <div className='gestion' id='gestion8'>
+            <NavLink to="/ver-ejercicios" className="clases clickable-button">
+                            <p>Ver Ejercicios</p>
+                        </NavLink>
+            </div>
             </div>
 
             <nav className='buttons'>

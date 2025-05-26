@@ -18,9 +18,6 @@ const PerfilPage = () => {
             <MenuUsuario></MenuUsuario>
            </div>
             <h1 className='titulo-perfil'>Perfil</h1>
-            <div className='foto-perfil'>
-                <p>FOTO</p>
-            </div>
             <nav className='buttons'>
                 
                 {token && (

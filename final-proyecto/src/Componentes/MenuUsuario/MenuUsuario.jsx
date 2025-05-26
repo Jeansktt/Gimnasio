@@ -8,7 +8,7 @@ const MenuUsuario = () => {
             <Link to="/">Inicio</Link>
             <Link to="/verclases">Clases</Link>
             <Link to="/monitores">Entrenadores</Link>
-            <Link to="/ejercicios">Ejercicios</Link> 
+            <Link to="/ver-ejercicios-user">Ejercicios</Link> 
             <Link to="/reservas">Reservas</Link>
             <Link to="/valoracion">Valoración</Link> 
             <Link to="/perfil">Perfil</Link>          

@@ -1,0 +1,50 @@
+.container-ejercicioform{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  background-image: url('../../imagenes/gestion5.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 650px;
+}
+.div-ejercicioform{
+    background-color: #009CCB;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    width: 550px;
+    height: 500px;
+    
+    
+}
+
+.form-ejercicio{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+    outline: none;
+    
+}
+
+.campos-ejercicio{
+    background:transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #333;
+    font-size: 18px;
+}
+
+.boton-ejercicio{
+    background-color: black;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    color: white;
+    border: none;
+}
