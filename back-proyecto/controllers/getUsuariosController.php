@@ -8,7 +8,7 @@ class ObtenerUsuarios {
         $con = conectar();
 
         try {
-            $usuarios = self::selectAllUsers($con); // Llamar al nuevo método
+            $usuarios = self::selectAllUsers($con); 
 
             echo json_encode([
                 'status' => 'Success',

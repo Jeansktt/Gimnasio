@@ -26,7 +26,6 @@ class ObtenerClases {
     }
 
      private static function selectAllGymClasses($mysqli) {
-        //"SELECT * FROM clases ORDER BY fecha ASC"
         $stmt = $mysqli->prepare("SELECT 
                                       c.id_clases,
                                       c.nombre_clase AS nombre_clase,

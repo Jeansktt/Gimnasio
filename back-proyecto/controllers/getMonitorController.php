@@ -8,8 +8,7 @@ class ObtenerMonitores {
         $con = conectar();
 
         try {
-            $monitores = self::selectAllMonitores($con); // Llamar al nuevo método
-
+            $monitores = self::selectAllMonitores($con);
             echo json_encode([
                 'status' => 'Success',
                 'data' => [

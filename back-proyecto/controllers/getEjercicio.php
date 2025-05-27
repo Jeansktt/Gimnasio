@@ -8,7 +8,7 @@ class ObtenerEjercicios {
         $con = conectar();
 
         try {
-            $classes = self::selectEjercicios($con); // Llamar a método estático correctamente
+            $classes = self::selectEjercicios($con); 
 
             echo json_encode([
                 'status' => 'Success',

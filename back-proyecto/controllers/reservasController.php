@@ -5,7 +5,7 @@ require_once("../db/conexion.php");
 class RerservasController{
     public static function reservar(){
         $con= conectar();
-        //$con= conectar();
+    
 
         $input = json_decode(file_get_contents("php://input"), true);
 

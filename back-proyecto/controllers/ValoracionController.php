@@ -6,20 +6,16 @@ class ValoracionController {
 
     public static function valoracion() {
         // Conectar a la base de datos
-        $con = conectar();  // Usamos la función conectar() para obtener la conexión
-
-        // Verificar token y obtener datos del usuario
-        //verificarToken();  // Llamada a la función que verifica el token
+        $con = conectar(); 
         
         // Obtener los datos del cuerpo de la solicitud
         $data = json_decode(file_get_contents("php://input"), true);
 
         // Recibir los datos de la valoración
         $id_usuario = $data['id_usuario'] ?? ''; 
-        $id_monitor = $data['id_monitor'] ?? '';  // El 'id_monitor' debe venir en el cuerpo de la solicitud
+        $id_monitor = $data['id_monitor'] ?? '';  
         $puntuacion = $data['puntuacion'] ?? '';
-        //$fecha = $data['fecha_valoracion'] ?? '';  // La fecha de la valoración
-        $comentario = $data['comentario'] ?? '';  // El comentario dejado por el usuario
+        $comentario = $data['comentario'] ?? '';  
 
         // Validar que todos los campos estén presentes
         if (empty($id_usuario) || empty($id_monitor) || empty($puntuacion) || empty($comentario)) {

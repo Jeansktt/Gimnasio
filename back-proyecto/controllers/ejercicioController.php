@@ -3,14 +3,7 @@ require_once('../db/conexion.php');
 
 class ejercicioController {
     public static function ejercicios() {
-       /* header('Content-Type: application/json');
-
-    // Imprime para depurar
-    echo json_encode([
-        'post' => $_POST,
-        'files' => $_FILES
-    ]);
-    exit; */
+       
         $con = conectar();
 
         // Verifica que los datos requeridos estén presentes

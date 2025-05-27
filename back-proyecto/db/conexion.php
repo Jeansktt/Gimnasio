@@ -76,17 +76,5 @@ function tabla_ejercicios($con) {
 }
 
 
-// Solo para probar desde Postman o navegador
-/*if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    $con = conectar();
-    if ($con) {
-		//mensaje que devuelve postman tanto si funciona como si no funcion
-        echo "Conexión exitosa y tabla creada.";
-    } else {
-        echo "Error en la conexión.";
-    }
-}
-*/
-
 
 ?>

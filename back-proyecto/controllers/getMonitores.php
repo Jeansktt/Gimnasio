@@ -5,7 +5,6 @@ require_once("../vendor/autoload.php");
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
-// === Función para verificar el token JWT ===
 function verificarToken() {
     $headers = getallheaders();
     $authHeader = $headers['Authorization'] ?? '';
@@ -19,7 +18,7 @@ function verificarToken() {
     $token = str_replace('Bearer ', '', $authHeader);
 
     try {
-        $clave_secreta = 'gym'; // La misma clave que usaste en login
+        $clave_secreta = 'gym'; 
         $decoded = JWT::decode($token, new Key($clave_secreta, 'HS256'));
         return $decoded;
     } catch (Exception $e) {
@@ -29,13 +28,13 @@ function verificarToken() {
     }
 }
 
-// === Verificar el token ===
+//  Verificar el token
 verificarToken();
 
-// === Conectar a la base de datos ===
+//Conectar a la base de datos 
 $con = conectar();
 
-// === Obtener todas las clases ===
+//Obtener todas las clases 
 $query = $con->prepare("SELECT * FROM monitores");
 $query->execute();
 $resultado = $query->get_result();
