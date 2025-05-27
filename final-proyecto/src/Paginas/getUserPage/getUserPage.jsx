@@ -28,7 +28,7 @@ const ViewUserPage = () => {
   if (loading) return <p>Cargando usuarios...</p>;
 
   return (
-    <div>
+    <div className='body-usuario'>
       <MenuMonitor></MenuMonitor>
       <h2 className='titulo-users'>Usuarios registrados</h2>
     <div className='container-usuarios'>

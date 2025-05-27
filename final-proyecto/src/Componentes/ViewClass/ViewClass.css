@@ -3,6 +3,7 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   padding: 1rem;
+  
 }
 .class-card {
   border: 1px solid #ccc;

@@ -45,7 +45,7 @@ const ViewEjercicioPage = () => {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div>
+    <div className='body-ejercicio'>
       <MenuMonitor />
       <h2 className='titulo-ejercicios'>Ejercicios</h2>
       <div className='contenedor-ejercicios'>

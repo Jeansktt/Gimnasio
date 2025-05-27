@@ -27,7 +27,7 @@ const ViewValoracionPage = () => {
   if (loading) return <p>Cargando valoraciones...</p>;
 
   return (
-    <div className=''>
+    <div className='body-valoraciones'>
       <MenuMonitor></MenuMonitor>
       <h2 className='titulo-valoracion'>Valoraciones</h2>
       <div className='contenedor-valoraciones'>

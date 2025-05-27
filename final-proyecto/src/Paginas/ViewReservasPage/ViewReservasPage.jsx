@@ -26,7 +26,7 @@ const ViewReservasPage = () => {
   if (loading) return <p>Cargando reservas...</p>;
 
   return (
-    <div>
+    <div className='bod-reserva'>
       <div className='items-usuario'>
         <div className='menu'>
           <MenuMonitor />

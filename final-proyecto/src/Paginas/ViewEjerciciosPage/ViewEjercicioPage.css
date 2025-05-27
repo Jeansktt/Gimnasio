@@ -3,3 +3,16 @@
     justify-content: center;
     align-items: center;
 }
+.body-ejercicio{
+ 
+ height: 640px;   
+}
+
+.contenedor-ejercicios{
+    display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+}

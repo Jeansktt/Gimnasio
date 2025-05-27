@@ -12,6 +12,7 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  margin-bottom: 0;
   
 
 }
@@ -19,4 +20,5 @@
 .main-content>p{
     margin-top: 10px;
 }
+
 

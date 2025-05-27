@@ -49,7 +49,8 @@ const ReservaForm = () => {
         <div className='reserva'>
       <h2>Reservar Clase</h2>
       <form className="form-container" onSubmit={handleSubmit}>
-        <div>
+        <div className='user-id'>
+          <label className='iduser'>Tu ID:</label>
           <input
           className='campo-reservas'
             type="text"

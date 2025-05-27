@@ -19,6 +19,7 @@
     margin:50px;
     padding:50px;
     
+    
 }
 .reserva h2{
     display: flex;
@@ -56,4 +57,12 @@ input::placeholder {
     margin-top: 10px;
     align-items: center;
     justify-content: center;
+}
+.user-id{
+    display: flex;
+    flex-direction: column;
+}
+.iduser{
+    
+    font-size: 20px;
 }

@@ -29,7 +29,7 @@ const ViewClassPage = () => {
 
   return (
     
-    <div >
+    <div className='body-clase'>
       <div className='items-usuario'>
         <div className='menu'>
             <MenuUsuario></MenuUsuario>
