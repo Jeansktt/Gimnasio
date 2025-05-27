@@ -1,5 +1,5 @@
 import React from 'react';
-import './ViewReservas.css';
+
 
 const ViewReservas = ({ reserva }) => {
   return (

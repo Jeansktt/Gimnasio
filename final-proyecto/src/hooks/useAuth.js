@@ -1,4 +1,4 @@
-// hooks/useAuth.js
+
 import { useState } from 'react';
 
 const useAuth = () => {
@@ -20,7 +20,7 @@ const useAuth = () => {
         localStorage.setItem('user', JSON.stringify(data.info));
         setToken(data.token);
         setUser(data.info);
-        return { success: true };//, userInfo: data.info
+        return { success: true };
       } else {
         return { success: false, message: data.mensaje };
       }

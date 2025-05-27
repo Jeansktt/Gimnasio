@@ -3,10 +3,7 @@ import ReservaForm from '../../Componentes/ReservasForm/ReservasForm';
 import MenuUsuario from '../../Componentes/MenuUsuario/MenuUsuario';
 
 const ReservasPage = () => {
-    
-  //const { token } = useAuth();
-  //if (!token) return <Navigate to='/login' />; // Redirige si no hay token
-  
+
   return (
     
     <main className='clase'>

@@ -1,5 +1,3 @@
-// src/Servicios/deleteEjercicio.js
-
 const deleteEjercicio = async (id_ejercicio) => {
   try {
     const res = await fetch('http://localhost/linkia/Gym-Jean/back-proyecto/routes/borrarEjercicio.php', {

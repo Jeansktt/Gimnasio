@@ -18,7 +18,7 @@ const ViewEjercicioPage = () => {
         return res.json();
       })
       .then((data) => {
-        console.log('Respuesta backend:', data); // Mira qué llega aquí
+        console.log('Respuesta backend:', data); 
         if (data.status === 'Success' && Array.isArray(data.data.classes)) {
           setEjercicios(data.data.classes);
           setError(null);

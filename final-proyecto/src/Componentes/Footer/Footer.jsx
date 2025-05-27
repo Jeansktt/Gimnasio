@@ -8,7 +8,7 @@ const Footer = () => {
 
             
            <div className="app-layout">
-      {/* Aquí tu header o navbar */}
+     
       <main className="main-content">
         
         <p>2025©</p>

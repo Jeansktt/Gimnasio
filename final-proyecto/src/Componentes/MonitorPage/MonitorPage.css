@@ -9,7 +9,7 @@ align-items: center;
   background-color: #009CCB;
   display: flex;
   flex-direction: column;
-  width: 250px; /* Asegura que los <p> estén uno debajo de otro */
+  width: 250px; 
   height: 150px;
   justify-content: center;
   align-items: center;

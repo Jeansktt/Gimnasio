@@ -13,21 +13,18 @@ const userMonitor= async (id_monitor,nombre, username) => {
       }),
     });
 
-    // Verifica si la respuesta es exitosa
     if (!res.ok) {
-      // Si la respuesta no es exitosa, lanza un error con el mensaje de la respuesta
-      const errorBody = await res.json(); // Intentar analizar el cuerpo de la respuesta
+      const errorBody = await res.json(); 
       throw new Error(errorBody.message || 'Error al crear la clase.');
     }
 
-    // Si la respuesta es exitosa, puedes hacer lo que necesites con la respuesta
+    
     const body = await res.json();
     console.log('Clase creada exitosamente:', body);
 
-    return body; // Puedes devolver la respuesta si es necesario
+    return body; 
 
   } catch (error) {
-    // Si hay un error durante la solicitud o al procesar la respuesta, muestra un error
     throw new Error(error.message || 'Error desconocido al crear la clase');
   }
 };

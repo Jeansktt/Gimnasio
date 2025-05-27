@@ -17,11 +17,7 @@ const EjercicioForm = () => {
     setErrMsg('');
     setLoading(true);
 
-   // console.log('Foto seleccionada:', foto);
-//console.log('Es instancia de File:', foto instanceof File);
-
-
-    // Validación simple
+   
     if (!nombreEjercicio || !descripcionEjercicio || !series || !foto) {
       setErrMsg("Todos los campos son obligatorios.");
       setLoading(false);
@@ -75,11 +71,10 @@ const EjercicioForm = () => {
       <label>Foto:</label>
       <input
         type="file"
-        accept="image/*" // opcional: solo imágenes
+        accept="image/*" 
         onChange={(e) => {
         const file = e.target.files[0];
-        //console.log('Foto seleccionada:', file);
-        //console.log('Es instancia de File:', file instanceof File);
+        
         setfoto(file);
   }}
   required

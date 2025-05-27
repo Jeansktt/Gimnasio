@@ -12,7 +12,7 @@ const getEjercicios = async () => {
       throw new Error(data.message || 'No se pudo obtener la lista de ejercicios');
     }
 
-    return data.data.ejercicio; // Devuelve directamente el array de ejercicios
+    return data.data.ejercicio; 
   } catch (error) {
     console.error('Error en getEjercicios:', error.message);
     throw error;
